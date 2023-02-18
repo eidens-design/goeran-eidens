@@ -7,6 +7,7 @@ import { LanguageSelector } from "astro-i18next/components";
 
 import '../styles/base/reset.css';
 
+import Navigation from '../components/Navigation.astro';
 import SkipLink from '../components/SkipLink.astro';
 ---
 
@@ -53,6 +54,7 @@ import SkipLink from '../components/SkipLink.astro';
 	<body>
 		<SkipLink />
 		<main id="main-content">
+			<Navigation />
 			<slot />
 			<LanguageSelector showFlag={true} class="my-select-class" />
 		</main>

@@ -1,0 +1,44 @@
+---
+import { localizePath } from "astro-i18next";
+const pathname = new URL(Astro.request.url).pathname;
+
+console.log(pathname)
+
+const links = [
+    {
+        href: localizePath("/"),
+        name: "Home",
+    },
+    {
+        href: localizePath("/about"),
+        name: "About",
+    },
+    {
+        href: localizePath("/contact"),
+        name: "Contact",
+    },
+];
+---
+
+<ul tabindex="0">
+    {
+        links.map(({ href, name }) => (
+            <li>
+                <a
+                    class={pathname === href ? "link--active" : ""}
+                    href={href}
+                >
+                    {name}
+                </a>
+            </li>
+        ))
+    }
+</ul>
+
+<style lang="scss">
+    .link {
+        &--active {
+            font-weight: bold;
+        }
+    }
+</style>

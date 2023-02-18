@@ -7,5 +7,8 @@ import sitemap from "@astrojs/sitemap";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://goeran-eidens.de',
-  integrations: [sitemap(),astroI18next()]
+  integrations: [sitemap(),astroI18next()],
+  i18nextServer: {
+    debug: true,
+  },
 });
