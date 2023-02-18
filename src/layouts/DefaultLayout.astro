@@ -1,0 +1,60 @@
+---
+import { SEO } from "astro-seo";
+
+import i18next, { t } from "i18next";
+import { Trans, HeadHrefLangs } from "astro-i18next/components";
+import { LanguageSelector } from "astro-i18next/components";
+
+import '../styles/base/reset.css';
+
+import SkipLink from '../components/SkipLink.astro';
+---
+
+<html lang={i18next.language}>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<SEO
+			title={t("site.title")}
+			description={t("site.description")}
+			openGraph={{
+				basic: {
+					title: t("site.title"),
+					type: "Website",
+					image: "https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+				},
+                image: {
+                    height: 30000,
+                    width: 30,
+                    alt: "Logo"
+                },
+			}}
+			extend={{
+				// extending the default link tags
+				link: [{ rel: "icon", href: "/favicon.ico" }],
+				// extending the default meta tags
+				meta: [
+					{
+						name: "twitter:image",
+						content:
+							"https://user-images.githubusercontent.com/5182256/131216951-8f74f425-f775-463d-a11b-0e01ad9fce8d.png",
+					},
+					{
+						name: "twitter:title",
+						content: "Tinker Tailor Soldier Spy",
+					},
+					{ name: "twitter:description", content: "Agent" },
+				],
+			}}
+			/>
+			<HeadHrefLangs />
+		<title>{t("site.title")}</title>
+	</head>
+	<body>
+		<SkipLink />
+		<main id="main-content">
+			<slot />
+			<LanguageSelector showFlag={true} class="my-select-class" />
+		</main>
+	</body>
+</html>
