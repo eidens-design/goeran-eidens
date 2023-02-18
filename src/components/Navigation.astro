@@ -2,22 +2,23 @@
 import { localizePath } from "astro-i18next";
 const pathname = new URL(Astro.request.url).pathname;
 
-console.log(pathname)
-
 const links = [
     {
-        href: localizePath("/"),
+        href: "/",
         name: "Home",
     },
     {
-        href: localizePath("/about"),
+        href: "/about",
         name: "About",
     },
     {
-        href: localizePath("/contact"),
+        href: "/contact",
         name: "Contact",
     },
-];
+].map(({ href, name }) => ({
+    name: name,
+    href: localizePath(href)
+}))
 ---
 
 <ul tabindex="0">
