@@ -3,13 +3,9 @@ export default {
   defaultLocale: "de",
   locales: ["de", "en"],
   routes: {
-    de: {
-      "about": "ueber-mich",
-      "contact": "kontakt",
-    },
     en: {
-      "about": "about",
-      "contact": "contact",
+      "ueber-mich": "about",
+      "kontakt": "contact",
     }
   }
 };
