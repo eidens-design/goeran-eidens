@@ -1,13 +1,25 @@
 {
     "site": {
         "title": "Webdesigner from Bremen - Paul Göran Eidens",
-        "description": "Meta description"
+        "meta": {
+            "description": "Meta description"
+        }
     },
-    "home": {
-        "title": "Home"
+    "page": {
+        "home": {
+            "title": "Home"
+        },
+        "about": {
+            "title": "About"
+        },
+        "contact": {
+            "title": "Contact"
+        }
     },
-    "component__skip-link": {
-        "text": "Skip to main content",
-        "error": "SkipLinks are not set, either missing an h1 or main content id on the page."
+    "component": {
+        "skip-link": {
+            "text": "Skip to main content",
+            "error": "SkipLinks are not set, either missing an h1 or main content id on the page."
+        }
     }
 }

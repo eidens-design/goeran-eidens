@@ -3,7 +3,7 @@ import { t } from "i18next";
 ---
 
 <div class="skip-link">
-    <a href="#main-content">{t("component__skip-link.text")}</a>
+    <a href="#main-content">{t("component.skip-link.text")}</a>
 </div>
 
 <script type="module">
@@ -31,7 +31,7 @@ import { t } from "i18next";
             h1.setAttribute("tabindex", "-1");
             h1.focus();
         } else {
-            console.warn(t("component__skip-link.error"));
+            console.warn(t("component.skip-link.error"));
         }
     });
 </script>
